@@ -1,0 +1,75 @@
+<!DOCTYPE html >
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Amazin</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+		<h1 class="header">Amazin.com</h1>
+		<h2 class="centered">
+			Welcome to the <em>smallest</em> online shop in the world!!
+		</h2>
+</header>
+
+<nav>
+	<ul>
+		<h:form>
+			<li><h:commandLink value="Start" action="#{controller.startAction}" /></li>
+		</h:form>
+		<li><h:outputLink value="http://miw.uniovi.es">About</h:outputLink></li>
+		<li><h:outputLink value="mailto:dd@email.com">Contact</h:outputLink></li>
+	</ul>
+</nav>
+
+<section>
+		<article>
+			<h:form>
+				<h:outputLabel value="Nombre" for="nombre"></h:outputLabel>
+				<h:inputText value="#{userManagerServiceHelper.registerInfo.name}"
+					label="Nombre" id="nombre"></h:inputText>
+					<h:message for="nombre" style="color:red" /><br></br><br></br>
+					
+				<h:outputLabel value="Apellidos" for="apellidos"></h:outputLabel>
+				<h:inputText value="#{userManagerServiceHelper.registerInfo.surname}"
+					label="Apellidos" id="apellidos"></h:inputText>
+					<h:message for="apellidos" style="color:red" /><br></br><br></br>
+					
+				<h:outputLabel value="Login" for="login"></h:outputLabel>
+				<h:inputText value="#{userManagerServiceHelper.registerInfo.login}"
+					label="Login" id="login"></h:inputText>
+					<h:message for="login" style="color:red" /><br></br><br></br>
+					
+				<h:outputLabel value="Email" for="email"></h:outputLabel>
+				<h:inputText value="#{userManagerServiceHelper.registerInfo.email}"
+					label="Email"></h:inputText><br></br><br></br>
+					
+				<h:outputLabel value="Edad" for="edad"></h:outputLabel>
+				<h:inputText value="#{userManagerServiceHelper.registerInfo.age}"
+					label="Edad"></h:inputText><br></br><br></br>
+					
+				<h:outputLabel value="Telefono" for="telefono"></h:outputLabel>
+				<h:inputText value="#{userManagerServiceHelper.registerInfo.phone}"
+					label="Tel�fono"></h:inputText><br></br><br></br>
+					
+				<h:outputLabel value="Contraseña" for="contraseña"></h:outputLabel>
+				<h:inputSecret value="#{userManagerServiceHelper.registerInfo.password}"
+					label="Contrase�a"></h:inputSecret><br></br><br></br>
+					
+				<h:outputLabel value="Repetir Contraseña" for="repetirContraseña"></h:outputLabel>
+				<h:inputSecret value="#{userManagerServiceHelper.registerInfo.repeatPassword}"
+					label="Repita contrase�a"></h:inputSecret><br></br><br></br> 
+					 
+				<h:commandButton value="submit" action="#{userManagerServiceHelper.registerUser}" />
+			</h:form>
+
+		</article>
+	</section>
+
+</body>
+</html>

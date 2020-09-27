@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15766616755550" configfile="/Amazin_JSF_11.0.0MALU/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf15767569114846" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf15767569114847 pf15767569114848 pf157675699104513" inlinks="pf15767569114849 pf157675699104514 pf157675699104513 pf15770180469560 pf15770180469561 pf15790298270246 pf15790298270247" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showBooks.xhtml" id="pf157675691148411" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15767569114849 pf15790236358510 pf15790288607503" inlinks="pf15767569114847" path="showBooks.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showSpecialOffer.xhtml" id="pf157675691148412" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf157675699104514" inlinks="pf15767569114848" path="showSpecialOffer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="l.xhtml" id="pf15770180469562" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15770180469560 pf15770180469561 pf15770180469563 pf15794637393450" inlinks="pf15770180469563" path="login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addCart.xhtml" id="pf15790236358511" referenceLink="//@navigationRule.5/@navigationCase.1/@toViewId|" outlinks="pf15790295992325 pf15790298270246" inlinks="pf15790236358510 pf157903036814412" path="addCart.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showCart.xhtml" id="pf15790288607504" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf15790298270247 pf157903036814412" inlinks="pf15790288607503 pf15790295992325" path="showCart.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registerUserForm.xhtml" id="pf15794637393461" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf15794637393450" path="registerUserForm.xhtml"/>
+  <links id="pf15767569114847" target="pf157675691148411" source="pf15767569114846"/>
+  <links id="pf15767569114849" target="pf15767569114846" source="pf157675691148411"/>
+  <links id="pf15767569114848" target="pf157675691148412" source="pf15767569114846"/>
+  <links id="pf157675699104514" target="pf15767569114846" source="pf157675691148412"/>
+  <links id="pf157675699104513" target="pf15767569114846" source="pf15767569114846"/>
+  <links id="pf15770180469560" target="pf15767569114846" source="pf15770180469562"/>
+  <links id="pf15770180469561" target="pf15767569114846" source="pf15770180469562"/>
+  <links id="pf15770180469563" target="pf15770180469562" source="pf15770180469562"/>
+  <links id="pf15790236358510" target="pf15790236358511" source="pf157675691148411"/>
+  <links id="pf15790288607503" target="pf15790288607504" source="pf157675691148411"/>
+  <links id="pf15790295992325" target="pf15790288607504" source="pf15790236358511"/>
+  <links id="pf15790298270246" target="pf15767569114846" source="pf15790236358511"/>
+  <links id="pf15790298270247" target="pf15767569114846" source="pf15790288607504"/>
+  <links id="pf157903036814412" target="pf15790236358511" source="pf15790288607504"/>
+  <links id="pf15794637393450" target="pf15794637393461" source="pf15770180469562"/>
+</pageflow:Pageflow>

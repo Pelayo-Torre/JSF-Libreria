@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<managed-bean>
+		<managed-bean-name>bookManagerService</managed-bean-name>
+		<managed-bean-class>com.miw.business.bookmanager.BookManager</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>bookDataService</property-name>
+			<property-class>com.miw.persistence.book.BookDAO</property-class>
+			<value>#{bookDataService}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>vatDataService</property-name>
+			<property-class>com.miw.persistence.vat.VATDAO</property-class>
+			<value>#{vatDataService}</value>
+		</managed-property>
+	</managed-bean>
+	 
+	<managed-bean>
+		<managed-bean-name>userManagerService</managed-bean-name>
+		<managed-bean-class>com.miw.business.usermanager.UserManager</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>userDataService</property-name>
+			<property-class>com.miw.persistence.user.UserDAO</property-class>
+			<value>#{userDataService}</value>
+		</managed-property> 
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>bookDataService</managed-bean-name>
+		<managed-bean-class>com.miw.persistence.book.BookDAO</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>vatDataService</managed-bean-name>
+		<managed-bean-class>com.miw.persistence.vat.VATDAO</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean> 
+	<managed-bean>
+		<managed-bean-name>userDataService</managed-bean-name>
+		<managed-bean-class>com.miw.persistence.user.UserDAO</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	<navigation-rule>
+		<from-view-id>login.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controller.login}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>index.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{controller.login}</from-action>
+			<from-outcome>login-error</from-outcome>
+			<to-view-id>login.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{controller.startAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>index.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{controller.register}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>registerUserForm.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+	
+
+	<navigation-rule>
+		<from-view-id>index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controller.showBooksAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>showBooks.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{controller.showSpecialOfferAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>showSpecialOffer.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{controller.startAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>showBooks.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controller.startAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>index.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{controller.showAddCartAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>addCart.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{controller.showCartAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>showCart.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>showSpecialOffer.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controller.startAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>addCart.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{addCart.librosSeleccionados}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>showCart.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{controller.startAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>showCart.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controller.startAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>index.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{controller.showAddCartAction}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>addCart.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+
+</faces-config>
